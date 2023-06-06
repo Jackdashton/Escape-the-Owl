@@ -15,6 +15,10 @@ const moveForward = (event) => {
     console.log(car);
     car.classList.remove("user");
     car.nextElementSibling.classList.add("user");
+  } else if (event.key === "q") {
+    const bird = document.querySelector(".owl");
+    bird.classList.remove("owl");
+    bird.nextElementSibling.classList.add("owl");
   }
 };
 
