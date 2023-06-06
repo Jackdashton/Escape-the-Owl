@@ -1,0 +1,28 @@
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  height: 100px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+}
+
+#racetrack td.user{
+  background-image: url("images/car.JPG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#racetrack td.owl{
+  background-image: url("images/owl.JPG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
