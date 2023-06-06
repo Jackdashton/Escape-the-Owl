@@ -5,8 +5,9 @@ table, th, td {
 table {
   height: 100px;
   width: 100%;
-  background-repeat: no-repeat;
   background-size: 100%;
+  background-image: url("images/racetrack-background.JPG");
+  background-size: contain;
 }
 
 img {
