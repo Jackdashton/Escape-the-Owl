@@ -90,6 +90,10 @@ const startGame = () => {
 }
 
 startButton.addEventListener("click", startGame);
+nextButton.addEventListener("click", () => {
+  currentQuestionIndex ++ ;
+  setNextQuestion();
+});
 
 const setNextQuestion = () => {
   resetState()
@@ -112,6 +116,8 @@ const showQuestion = (question) => {
 }
 
 const resetState = () => {
+  clearStatusClass(document.body)
+  // potentially just for container.
   nextButton.classList.add("hide");
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
@@ -126,13 +132,25 @@ const selectAnswer = (e) => {
   Array.from(answerButtons.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
   })
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    nextButton.classList.remove("hide");
+  } else {
+    startButton.innerText = "Restart";
+    startButton.classList.remove("hide");
+  }
+
 }
 
 const setStatusClass = (element, correct) => {
   clearStatusClass(element);
   if (correct) {
-    element.ClassList.add("correct");
+    element.classList.add("correct");
   } else {
-    element.ClassList.add("wrong");
+    element.classList.add("wrong");
   }
+}
+
+const clearStatusClass = (element) => {
+  element.classList.remove("correct");
+  element.classList.remove("wrong");
 }
