@@ -33,15 +33,24 @@
       </table>
     </div>
 
-    <div class="questions">
-      <h2>Questions</h2>
-      <h4>Translate these words from German to English</h4>
+    <!-- Quiz -->
 
-      
-
+    <div class="container">
+      <div id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <!-- Hide the next button by default -->
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+      </div>
     </div>
-
-    <!-- Implement boost for hard question -->
 
     <script src="main.js"></script>
   </body>

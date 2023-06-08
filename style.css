@@ -1,4 +1,11 @@
-table, th, td {
+:root {
+  --correct: #27e60e;
+  --wrong: #e31616;
+}
+
+table,
+th,
+td {
   border: 1px solid;
 }
 
@@ -15,15 +22,77 @@ img {
   height: 40px;
 }
 
-#racetrack td.user{
+#racetrack td.user {
   background-image: url("images/car.JPG");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-#racetrack td.owl{
+#racetrack td.owl {
   background-image: url("images/owl.JPG");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.container {
+  padding: 0px;
+  padding-top: 50px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
+  background-color: rgb(103, 103, 95);
+}
+
+.container-correct {
+  --correct: var(--correct: #27e60e);
+}
+
+.container-wrong {
+  --wrong: var(--wrong: #e31616);
+}
+
+#question-container {
+  background-color: rgb(138, 215, 138);
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: beige;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  outline: none;
+}
+
+.btn:hover {
+  border-color: black;
+}
+
+.btn.correct {
+  background-color: green;
+}
+
+.btn.wrong {
+  background-color: red;
+}
+
+.start-btn, .next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.hide {
+  display: none;
 }
