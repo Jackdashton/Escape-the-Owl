@@ -82,7 +82,6 @@ let shuffledQuestions = undefined;
 let currentQuestionIndex = undefined;
 
 const startGame = () => {
-  console.log("Started");
   startButton.classList.add("hide");
   questionContainer.classList.remove("hide");
   shuffledQuestions = questions.sort(() => Math.random() - .5);
@@ -120,5 +119,20 @@ const resetState = () => {
 }
 
 const selectAnswer = (e) => {
+  const selectedButton = e.target;
+  const correct = selectedButton.dataset.correct;
+  setStatusClass(document.body, correct);
+  // possibly container?
+  Array.from(answerButtons.children).forEach(button => {
+    setStatusClass(button, button.dataset.correct)
+  })
+}
 
+const setStatusClass = (element, correct) => {
+  clearStatusClass(element);
+  if (correct) {
+    element.ClassList.add("correct");
+  } else {
+    element.ClassList.add("wrong");
+  }
 }
