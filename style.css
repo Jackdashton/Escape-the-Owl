@@ -1,4 +1,11 @@
-table, th, td {
+:root {
+  --correct: #27e60e;
+  --wrong: #e31616;
+}
+
+table,
+th,
+td {
   border: 1px solid;
 }
 
@@ -15,15 +22,26 @@ img {
   height: 40px;
 }
 
-#racetrack td.user{
+#racetrack td.user {
   background-image: url("images/car.JPG");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-#racetrack td.owl{
+#racetrack td.owl {
   background-image: url("images/owl.JPG");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.container {
+  padding: 0px;
+  padding-top: 50px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
 }
