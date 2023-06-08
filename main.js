@@ -75,31 +75,50 @@ document.addEventListener("keyup", moveForward);
 const startButton = document.querySelector("#start-btn");
 const nextButton = document.querySelector("#next-btn");
 const questionContainer = document.getElementById("question-container");
-const questionElement = document.querySelector(".question");
-console.log(questionElement);
+const questionElement = document.getElementById("question");
+const answerButtons = document.getElementById("answer-buttons");
 
-let shuffledQuestions = questions;
+let shuffledQuestions = undefined;
 let currentQuestionIndex = undefined;
 
 const startGame = () => {
   console.log("Started");
   startButton.classList.add("hide");
-  shuffledQuestions = questions;
-  currentQuestionIndex = 0;
   questionContainer.classList.remove("hide");
+  shuffledQuestions = questions.sort(() => Math.random() - .5);
+  currentQuestionIndex = 0;
   setNextQuestion();
 }
 
 startButton.addEventListener("click", startGame);
 
 const setNextQuestion = () => {
+  resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
-const showQuestion = () => {
-
+const showQuestion = (question) => {
+  questionElement.innerText = question.question;
+  question.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.innerText = answer.text;
+    button.classList.add("btn");
+    if (answer.correct) {
+      // Also add the movement in here
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
+    answerButtons.appendChild(button);
+  })
 }
 
-const selectAnswer = () => {
+const resetState = () => {
+  nextButton.classList.add("hide");
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+  }
+}
+
+const selectAnswer = (e) => {
 
 }
