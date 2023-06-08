@@ -29,8 +29,6 @@ const moveForward = (event) => {
 document.addEventListener("keyup", moveForward);
 
 // Questions
-// Array of objects to store questions and answers
-
 const myQuestions = [
   {
     question: "Haus",
@@ -42,22 +40,30 @@ const myQuestions = [
   },
 ];
 
-// Function for the quiz
+// Functions for the quiz
 
-// generateQuiz function contains helper functions to show the quiz, accept submissions, and show the results.
+// Start the game - click start btn
+// Set next question - click next btn
+// Select Answer - click on an answer btn
 
-const generateQuiz = (questions, quizContainer, resultsContainer, submitButton) => {
-  const showQuestions = (questions, quizContainer) => {
+const startButton = document.querySelector("#start-btn");
+const nextButton = document.querySelector("#next-btn");
+const questionContainer = document.getElementById("question-container");
 
-  }
-  const showResults = (questions, quizContainer, resultsContainer) => {
 
-  }
 
-  showQuestions(questions, quizContainer);
+const startGame = () => {
+  console.log("Started");
+  startButton.classList.add("hide");
+  questionContainer.classList.remove("hide");
+}
 
-  submitButton.onclick = function() {
-    showResults(questions, quizContainer, resultsContainer)
-  }
+startButton.addEventListener("click", startGame);
+
+const setNextQuestion = () => {
+
+}
+
+const selectAnswer = () => {
 
 }
