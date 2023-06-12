@@ -57,7 +57,11 @@ img {
 }
 
 #question-container {
-  background-color: rgb(138, 215, 138);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: solid 1px black;
+  padding: 20px;
+  margin: 10px;
 }
 
 .btn-grid {
