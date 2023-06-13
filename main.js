@@ -36,11 +36,20 @@ let questions = [
       { text: 'No Problem', correct: false },
       { text: 'Yes', correct: false }
     ]
+  },
+  {
+    question: 'Translate "Entschuldigung"',
+    answers: [
+      { text: 'Definitely', correct: false },
+      { text: 'Entirely', correct: false },
+      { text: 'Sorry', correct: true },
+      { text: 'Yes', correct: false }
+    ]
   }
 ]
 
 
-// when suer presses key, check to see if there is an available sibling
+// when user presses key, check to see if there is an available sibling
 // if yes, move active class from current to next
 // if no available td, alert winner
 
