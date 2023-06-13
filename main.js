@@ -5,8 +5,8 @@ let questions = [
     question: 'Translate "Guten Tag"',
     answers: [
       { text: 'Good day', correct: true },
-      { text: 'Goodbye', correct: false }
-      { text: 'See you soon', correct: false }
+      { text: 'Goodbye', correct: false },
+      { text: 'See you soon', correct: false },
       { text: "I'm hungry", correct: false }
     ]
   },
@@ -14,8 +14,8 @@ let questions = [
     question: 'Translate "Auf Wiedersehen"',
     answers: [
       { text: 'The boy', correct: false },
-      { text: 'Goodbye', correct: true }
-      { text: 'Have a nice time!', correct: false }
+      { text: 'Goodbye', correct: true },
+      { text: 'Have a nice time!', correct: false },
       { text: "One beer, please", correct: false }
     ]
   },
