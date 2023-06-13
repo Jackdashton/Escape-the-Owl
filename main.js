@@ -2,35 +2,39 @@
 
 let questions = [
   {
-    question: 'What is 2 + 2?',
+    question: 'Translate "Guten Tag"',
     answers: [
-      { text: '4', correct: true },
-      { text: '22', correct: false }
+      { text: 'Good day', correct: true },
+      { text: 'Goodbye', correct: false }
+      { text: 'See you soon', correct: false }
+      { text: "I'm hungry", correct: false }
     ]
   },
   {
-    question: 'Who is the best YouTuber?',
+    question: 'Translate "Auf Wiedersehen"',
     answers: [
-      { text: 'Web Dev Simplified', correct: true },
-      { text: 'Traversy Media', correct: true },
-      { text: 'Dev Ed', correct: true },
-      { text: 'Fun Fun Function', correct: true }
+      { text: 'The boy', correct: false },
+      { text: 'Goodbye', correct: true }
+      { text: 'Have a nice time!', correct: false }
+      { text: "One beer, please", correct: false }
     ]
   },
   {
-    question: 'Is web development fun?',
+    question: 'Translate "Ja"',
     answers: [
-      { text: 'Kinda', correct: false },
-      { text: 'YES!!!', correct: true },
-      { text: 'Um no', correct: false },
-      { text: 'IDK', correct: false }
+      { text: 'Yes', correct: true },
+      { text: 'No', correct: false },
+      { text: 'Maybe', correct: false },
+      { text: 'Can you repeat the question?', correct: false }
     ]
   },
   {
-    question: 'What is 4 * 2?',
+    question: 'Translate "Nein"',
     answers: [
-      { text: '6', correct: false },
-      { text: '8', correct: true }
+      { text: 'No', correct: true },
+      { text: 'Possibly', correct: false },
+      { text: 'No Problem', correct: false },
+      { text: 'Yes', correct: false }
     ]
   }
 ]
