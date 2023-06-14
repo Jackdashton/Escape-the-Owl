@@ -38,6 +38,15 @@ let questions = [
     ]
   },
   {
+    question: 'Translate "Wie geht es dir?"',
+    answers: [
+      { text: "What's your name?", correct: false },
+      { text: "Where are you?", correct: false },
+      { text: "How are you?", correct: true },
+      { text: "Do you agree?", correct: false }
+    ]
+  },
+  {
     question: 'Translate "Entschuldigung"',
     answers: [
       { text: 'Definitely', correct: false },
