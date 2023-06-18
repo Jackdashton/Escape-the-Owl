@@ -99,6 +99,7 @@ const nextButton = document.querySelector("#next-btn");
 const questionContainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
+const car = document.querySelector(".user");
 
 let shuffledQuestions = undefined;
 let currentQuestionIndex = undefined;
@@ -167,6 +168,8 @@ const setStatusClass = (element, correct) => {
   clearStatusClass(element);
   if (correct) {
     element.classList.add("correct");
+    car.classList.remove("user");
+    car.nextElementSibling.classList.add("user");
   } else {
     element.classList.add("wrong");
   }
