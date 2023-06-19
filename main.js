@@ -107,25 +107,25 @@ function iterate(id) {
 
   // Show selection for op1
   option1.addEventListener("click", () => {
-    option1.style.backgroundColor = "lightblue";
+    option1.style.backgroundColor = "red";
     selected = option1.value;
   });
 
   // Show selection for op2
   option2.addEventListener("click", () => {
-    option2.style.backgroundColor = "lightblue";
+    option2.style.backgroundColor = "red";
     selected = option2.value;
   });
 
   // Show selection for op3
   option3.addEventListener("click", () => {
-    option3.style.backgroundColor = "lightblue";
+    option3.style.backgroundColor = "red";
     selected = option3.value;
   });
 
   // Show selection for op4
   option4.addEventListener("click", () => {
-    option4.style.backgroundColor = "lightblue";
+    option4.style.backgroundColor = "red";
     selected = option4.value;
   });
 
@@ -162,15 +162,24 @@ if (start) {
 // Next Button
 const next = document.querySelector(".next");
 let id = 0;
+const option1 = document.querySelector("#op1");
+const option2 = document.querySelector("#op2");
+const option3 = document.querySelector("#op3");
+const option4 = document.querySelector("#op4");
 
 next.addEventListener("click", () => {
   start = false;
+  option1.style.removeProperty("background-color");
+  option2.style.removeProperty("background-color");
+  option3.style.removeProperty("background-color");
+  option4.style.removeProperty("background-color");
   if (id < 2) {
     id++;
     iterate(id);
     console.log(id);
   }
 });
+
 
 // Racetrack
 
