@@ -24,14 +24,19 @@ const questions = [
 ];
 
 //  Set Start
+let start = true;
 
 // Iteration
 
 function iterate(id) {
 
   // Getting the results display section
+  const results = document.querySelector(".result");
+  results[0].innerText = "";
 
   // Getting the question
+
+  const question = document.querySelector("#question");
 
   // Setting the question text
 
@@ -41,15 +46,14 @@ function iterate(id) {
 
   // True of false value to the options
 
-  
+
 
 
 
 }
 
-
-
-
+const results = document.querySelector(".result")
+  console.log(results)
 
 
 
