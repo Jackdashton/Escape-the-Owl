@@ -1,115 +1,126 @@
-// Questions
+// Game State - control the overall status of the game
+const gameState = {
+  id: 0,
+  start: true,
+  selected: null,
+  questions: [
+    {
+      id: 0,
+      question: "Haus",
+      answers: [
+        { text: "House", isCorrect: true },
+        { text: "Mouse", isCorrect: false },
+        { text: "Car", isCorrect: false },
+        { text: "Apple", isCorrect: false },
+      ],
+    },
+    {
+      id: 1,
+      question: "Traurig",
+      answers: [
+        { text: "Happy", isCorrect: false },
+        { text: "Sad", isCorrect: true },
+        { text: "Excited", isCorrect: false },
+        { text: "Tired", isCorrect: false },
+      ],
+    },
+    {
+      id: 2,
+      question: "Bitte",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Please", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 3,
+      question: "Hallo",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Hello", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 4,
+      question: "Tschuss",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Bye", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 5,
+      question: "Essen",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Eating", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 6,
+      question: "Sitzen",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Sitting", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 7,
+      question: "Trinken",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Drinking", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 7,
+      question: "Schlagen",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Hitting", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 8,
+      question: "Hoeren",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+  ],
+};
 
-const Questions = [
-  {
-    id: 0,
-    q: "Haus",
-    a: [
-      { text: "House", isCorrect: true },
-      { text: "Mouse", isCorrect: false },
-      { text: "Car", isCorrect: false },
-      { text: "Apple", isCorrect: false },
-    ],
-  },
-  {
-    id: 1,
-    q: "Traurig",
-    a: [
-      { text: "Happy", isCorrect: false },
-      { text: "Sad", isCorrect: true },
-      { text: "Excited", isCorrect: false },
-      { text: "Tired", isCorrect: false },
-    ],
-  },
-  {
-    id: 2,
-    q: "Bitte",
-    a: [
-      { text: "Thanks", isCorrect: false },
-      { text: "Please", isCorrect: true },
-      { text: "Yes", isCorrect: false },
-      { text: "No", isCorrect: false },
-    ],
-  },
-  {
-    id: 3,
-    q: "Hallo",
-    a: [
-      { text: "Thanks", isCorrect: false },
-      { text: "Hello", isCorrect: true },
-      { text: "Yes", isCorrect: false },
-      { text: "No", isCorrect: false },
-    ],
-  },
-  {
-    id: 4,
-    q: "Tschuss",
-    a: [
-      { text: "Thanks", isCorrect: false },
-      { text: "Bye", isCorrect: true },
-      { text: "Yes", isCorrect: false },
-      { text: "No", isCorrect: false },
-    ],
-  },
-  {
-    id: 5,
-    q: "Essen",
-    a: [
-      { text: "Thanks", isCorrect: false },
-      { text: "Eating", isCorrect: true },
-      { text: "Yes", isCorrect: false },
-      { text: "No", isCorrect: false },
-    ],
-  },
-  {
-    id: 6,
-    q: "Sitzen",
-    a: [
-      { text: "Thanks", isCorrect: false },
-      { text: "Sitting", isCorrect: true },
-      { text: "Yes", isCorrect: false },
-      { text: "No", isCorrect: false },
-    ],
-  },
-  {
-    id: 7,
-    q: "Trinken",
-    a: [
-      { text: "Thanks", isCorrect: false },
-      { text: "Drinking", isCorrect: true },
-      { text: "Yes", isCorrect: false },
-      { text: "No", isCorrect: false },
-    ],
-  },
-  {
-    id: 7,
-    q: "Schlagen",
-    a: [
-      { text: "Thanks", isCorrect: false },
-      { text: "Hitting", isCorrect: true },
-      { text: "Yes", isCorrect: false },
-      { text: "No", isCorrect: false },
-    ],
-  },
-  {
-    id: 8,
-    q: "Hoeren",
-    a: [
-      { text: "Thanks", isCorrect: false },
-      { text: "Listening", isCorrect: true },
-      { text: "Yes", isCorrect: false },
-      { text: "No", isCorrect: false },
-    ],
-  }
-];
+// Update game question
 
-//  Set Start
-let start = true;
-
-// Iteration
+function updateGameQuestion(id) {
+  const question = document.querySelector("#question");
+  question.innerText = gameState.questions[id].question;
+  const options = document.querySelectorAll(".option");
+  options.forEach((option, index) => {
+    option.innerText = gameState.questions[id].answers[index].text;
+    option.value = gameState.questions[id].answers[index].isCorrect;
+    option.style.backgroundColor = "";
+  });
+}
 
 function iterate(id) {
-
   // User & Owl
   const car = document.querySelector(".user");
   const bird = document.querySelector(".owl");
@@ -197,10 +208,6 @@ function iterate(id) {
 //   window.location.reload();
 // }
 
-if (start) {
-  iterate("0");
-}
-
 // Next Button
 const next = document.querySelector(".next");
 let id = 0;
@@ -222,9 +229,6 @@ next.addEventListener("click", () => {
   }
 });
 
-
-// Racetrack
-
 // const moveForward = (event) => {
 //   if (event.key === "p") {
 //     const car = document.querySelector(".user");
@@ -244,6 +248,3 @@ next.addEventListener("click", () => {
 //     bird.nextElementSibling.classList.add("owl");
 //   }
 // };
-
-// Add an event listener on keyup which calls a function
-// document.addEventListener("keyup", moveForward);
