@@ -33,34 +33,74 @@ const Questions = [
   },
   {
     id: 3,
-    q: "Entschuldigung",
+    q: "Hallo",
     a: [
       { text: "Thanks", isCorrect: false },
-      { text: "Excuse me", isCorrect: true },
+      { text: "Hello", isCorrect: true },
       { text: "Yes", isCorrect: false },
       { text: "No", isCorrect: false },
     ],
   },
   {
     id: 4,
-    q: "Sprechen",
+    q: "Tschuss",
     a: [
-      { text: "Run", isCorrect: false },
-      { text: "Speak", isCorrect: true },
-      { text: "Sleep", isCorrect: false },
-      { text: "Eat", isCorrect: false },
+      { text: "Thanks", isCorrect: false },
+      { text: "Bye", isCorrect: true },
+      { text: "Yes", isCorrect: false },
+      { text: "No", isCorrect: false },
     ],
   },
   {
-    id: 4,
-    q: "Sprechen",
+    id: 5,
+    q: "Essen",
     a: [
-      { text: "Run", isCorrect: false },
-      { text: "Speak", isCorrect: true },
-      { text: "Sleep", isCorrect: false },
-      { text: "Eat", isCorrect: false },
+      { text: "Thanks", isCorrect: false },
+      { text: "Eating", isCorrect: true },
+      { text: "Yes", isCorrect: false },
+      { text: "No", isCorrect: false },
     ],
   },
+  {
+    id: 6,
+    q: "Sitzen",
+    a: [
+      { text: "Thanks", isCorrect: false },
+      { text: "Sitting", isCorrect: true },
+      { text: "Yes", isCorrect: false },
+      { text: "No", isCorrect: false },
+    ],
+  },
+  {
+    id: 7,
+    q: "Trinken",
+    a: [
+      { text: "Thanks", isCorrect: false },
+      { text: "Drinking", isCorrect: true },
+      { text: "Yes", isCorrect: false },
+      { text: "No", isCorrect: false },
+    ],
+  },
+  {
+    id: 7,
+    q: "Schlagen",
+    a: [
+      { text: "Thanks", isCorrect: false },
+      { text: "Hitting", isCorrect: true },
+      { text: "Yes", isCorrect: false },
+      { text: "No", isCorrect: false },
+    ],
+  },
+  {
+    id: 8,
+    q: "Hoeren",
+    a: [
+      { text: "Thanks", isCorrect: false },
+      { text: "Listening", isCorrect: true },
+      { text: "Yes", isCorrect: false },
+      { text: "No", isCorrect: false },
+    ],
+  }
 ];
 
 //  Set Start
@@ -107,25 +147,25 @@ function iterate(id) {
 
   // Show selection for op1
   option1.addEventListener("click", () => {
-    option1.style.backgroundColor = "red";
+    option1.style.backgroundColor = "lightblue";
     selected = option1.value;
   });
 
   // Show selection for op2
   option2.addEventListener("click", () => {
-    option2.style.backgroundColor = "red";
+    option2.style.backgroundColor = "lightblue";
     selected = option2.value;
   });
 
   // Show selection for op3
   option3.addEventListener("click", () => {
-    option3.style.backgroundColor = "red";
+    option3.style.backgroundColor = "lightblue";
     selected = option3.value;
   });
 
   // Show selection for op4
   option4.addEventListener("click", () => {
-    option4.style.backgroundColor = "red";
+    option4.style.backgroundColor = "lightblue";
     selected = option4.value;
   });
 
@@ -149,11 +189,13 @@ function iterate(id) {
       bird.classList.remove("owl");
       bird.nextElementSibling.classList.add("owl");
     }
-    if (bird.classList.contains("user") && bird.classList.contains("owl")) {
-      window.location.reload();
-    }
   });
 }
+
+// if (bird.classList.contains("user") && bird.classList.contains("owl")) {
+//   alert("The owl has caught you");
+//   window.location.reload();
+// }
 
 if (start) {
   iterate("0");
@@ -173,7 +215,7 @@ next.addEventListener("click", () => {
   option2.style.removeProperty("background-color");
   option3.style.removeProperty("background-color");
   option4.style.removeProperty("background-color");
-  if (id < 2) {
+  if (id < 20) {
     id++;
     iterate(id);
     console.log(id);
@@ -183,27 +225,25 @@ next.addEventListener("click", () => {
 
 // Racetrack
 
-const moveForward = (event) => {
-  if (event.key === "p") {
-    const car = document.querySelector(".user");
-    if (car.nextElementSibling) {
-      car.classList.remove("user");
-      car.nextElementSibling.classList.add("user");
-    } else {
-      alert("You have escaped, well done!");
-      window.location.reload();
-    }
-  } else if (event.key === "q") {
-    const bird = document.querySelector(".owl");
-    if (bird.classList.contains("user") && bird.classList.contains("owl")) {
-      alert("Game over, the owl caught you");
-      window.location.reload();
-    } else bird.classList.remove("owl");
-    bird.nextElementSibling.classList.add("owl");
-  }
-};
+// const moveForward = (event) => {
+//   if (event.key === "p") {
+//     const car = document.querySelector(".user");
+//     if (car.nextElementSibling) {
+//       car.classList.remove("user");
+//       car.nextElementSibling.classList.add("user");
+//     } else {
+//       alert("You have escaped, well done!");
+//       window.location.reload();
+//     }
+//   } else if (event.key === "q") {
+//     const bird = document.querySelector(".owl");
+//     if (bird.classList.contains("user") && bird.classList.contains("owl")) {
+//       alert("Game over, the owl caught you");
+//       window.location.reload();
+//     } else bird.classList.remove("owl");
+//     bird.nextElementSibling.classList.add("owl");
+//   }
+// };
 
 // Add an event listener on keyup which calls a function
-document.addEventListener("keyup", moveForward);
-
-// Functions for the quiz
+// document.addEventListener("keyup", moveForward);
