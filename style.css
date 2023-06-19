@@ -13,8 +13,8 @@ table {
   height: 100px;
   width: 100%;
   background-size: 100%;
-  background-image: url("images/racetrack-background.JPG");
-  background-size: contain;
+  /* background-image: url("images/racetrack-background.JPG"); */
+  /* background-size: contain; */
 }
 
 img {
@@ -79,15 +79,11 @@ img {
   outline: none;
 }
 
-.btn:hover {
-  border-color: black;
-}
-
-.btn.correct {
+.correct {
   background-color: green;
 }
 
-.btn.wrong {
+.wrong {
   background-color: red;
 }
 
