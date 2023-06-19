@@ -31,6 +31,36 @@ const Questions = [
       { text: "No", isCorrect: false },
     ],
   },
+  {
+    id: 3,
+    q: "Entschuldigung",
+    a: [
+      { text: "Thanks", isCorrect: false },
+      { text: "Excuse me", isCorrect: true },
+      { text: "Yes", isCorrect: false },
+      { text: "No", isCorrect: false },
+    ],
+  },
+  {
+    id: 4,
+    q: "Sprechen",
+    a: [
+      { text: "Run", isCorrect: false },
+      { text: "Speak", isCorrect: true },
+      { text: "Sleep", isCorrect: false },
+      { text: "Eat", isCorrect: false },
+    ],
+  },
+  {
+    id: 4,
+    q: "Sprechen",
+    a: [
+      { text: "Run", isCorrect: false },
+      { text: "Speak", isCorrect: true },
+      { text: "Sleep", isCorrect: false },
+      { text: "Eat", isCorrect: false },
+    ],
+  },
 ];
 
 //  Set Start
@@ -118,6 +148,9 @@ function iterate(id) {
       result[0].classList.add("wrong");
       bird.classList.remove("owl");
       bird.nextElementSibling.classList.add("owl");
+    }
+    if (bird.classList.contains("user") && bird.classList.contains("owl")) {
+      window.location.reload();
     }
   });
 }
