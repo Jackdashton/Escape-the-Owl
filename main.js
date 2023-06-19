@@ -1,6 +1,6 @@
 // Questions
 
-const questions = [
+const Questions = [
   {
     id: 0,
     q: "Haus",
@@ -39,10 +39,19 @@ function iterate(id) {
   const question = document.querySelector("#question");
 
   // Setting the question text
+  question.innerText = Questions[id].q;
 
   // Get the options
+  const option1 = document.querySelector("#op1");
+  const option2 = document.querySelector("#op2");
+  const option3 = document.querySelector("#op3");
+  const option4 = document.querySelector("#op4");
 
   // Providing Option Text
+  option1.innerText = Questions[id].a[0].text;
+  option1.innerText = Questions[id].a[1].text;
+  option1.innerText = Questions[id].a[2].text;
+  option1.innerText = Questions[id].a[3].text;
 
   // True of false value to the options
 
