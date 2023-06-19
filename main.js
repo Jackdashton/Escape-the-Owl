@@ -120,6 +120,21 @@ function updateGameQuestion(id) {
   });
 }
 
+function updateSelectedAnswer() {
+  //select all answers and for each add event listener
+  const options = document.querySelectorAll(".option");
+  // make the selected = to the clicked button
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      gameState.selected = option.value;
+      options.forEach((option) => (option.style.backgroundColor = ""));
+      option.style.backgroundColor = "lightblue";
+    });
+  });
+  // loop to make all same background color
+  // outside of this loop, make selected background color different.
+}
+
 function iterate(id) {
   // User & Owl
   const car = document.querySelector(".user");
