@@ -91,10 +91,10 @@ function iterate(id) {
   evaluate.addEventListener("click", () => {
     if (selected == "true") {
       // add in function to move user
-      result[0].innerHTML = "True";
+      result[0].innerHTML = "Correct";
     } else {
       // add in function to move owl
-      result[0].innerHTML = "False";
+      result[0].innerHTML = "Wrong";
     }
   });
 }
