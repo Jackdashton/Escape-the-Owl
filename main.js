@@ -21,6 +21,16 @@ const Questions = [
       { text: "Tired", isCorrect: false },
     ],
   },
+  {
+    id: 2,
+    q: "Bitte",
+    a: [
+      { text: "Thanks", isCorrect: false },
+      { text: "Please", isCorrect: true },
+      { text: "Yes", isCorrect: false },
+      { text: "No", isCorrect: false },
+    ],
+  },
 ];
 
 //  Set Start
@@ -62,25 +72,25 @@ function iterate(id) {
 
   // Show selection for op1
   option1.addEventListener("click", () => {
-    option1.computedStyleMap.backgroundColor = "lightgoldenrodyellow";
+    option1.style.backgroundColor = "lightblue";
     selected = option1.value;
   });
 
   // Show selection for op2
   option2.addEventListener("click", () => {
-    option2.computedStyleMap.backgroundColor = "lightgoldenrodyellow";
+    option2.style.backgroundColor = "lightblue";
     selected = option2.value;
   });
 
   // Show selection for op3
   option3.addEventListener("click", () => {
-    option3.computedStyleMap.backgroundColor = "lightgoldenrodyellow";
+    option3.style.backgroundColor = "lightblue";
     selected = option3.value;
   });
 
   // Show selection for op4
   option4.addEventListener("click", () => {
-    option4.computedStyleMap.backgroundColor = "lightgoldenrodyellow";
+    option4.style.backgroundColor = "lightblue";
     selected = option4.value;
   });
 
@@ -92,9 +102,12 @@ function iterate(id) {
     if (selected == "true") {
       // add in function to move user
       result[0].innerHTML = "Correct";
+      result[0].classList.add("correct");
+
     } else {
       // add in function to move owl
       result[0].innerHTML = "Wrong";
+      result[0].classList.add("wrong");
     }
   });
 }
