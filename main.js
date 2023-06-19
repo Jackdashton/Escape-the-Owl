@@ -39,6 +39,11 @@ let start = true;
 // Iteration
 
 function iterate(id) {
+
+  // User & Owl
+  const car = document.querySelector(".user");
+  const bird = document.querySelector(".owl");
+
   // Getting the result display section
   const result = document.querySelectorAll(".result");
   result[0].innerText = "";
@@ -103,11 +108,16 @@ function iterate(id) {
       // add in function to move user
       result[0].innerHTML = "Correct";
       result[0].classList.add("correct");
-
+      if (car.nextElementSibling) {
+        car.classList.remove("user");
+        car.nextElementSibling.classList.add("user");
+      }
     } else {
       // add in function to move owl
       result[0].innerHTML = "Wrong";
       result[0].classList.add("wrong");
+      bird.classList.remove("owl");
+      bird.nextElementSibling.classList.add("owl");
     }
   });
 }
