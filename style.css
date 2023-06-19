@@ -100,3 +100,42 @@ img {
 .hide {
   display: none;
 }
+
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  border: solid 1px black;
+  margin: 20px;
+}
+
+.result {
+  border: solid 1px black;
+  padding: 20px;
+}
+
+.question-container {
+  border: solid 1px black;
+  padding: 20px;
+}
+
+.option-container {
+  border: solid 1px black;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.navigation {
+  border: solid 1px black;
+  padding: 20px;
+}
+
+button {
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 10px;
+}
