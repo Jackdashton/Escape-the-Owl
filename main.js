@@ -104,6 +104,66 @@ const gameState = {
         { text: "No", isCorrect: false },
       ],
     },
+    {
+      id: 9,
+      question: "Shrieken",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 10,
+      question: "passen",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 11,
+      question: "lacheln",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 12,
+      question: "stellen",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 13,
+      question: "arbeiten",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 14,
+      question: "laufen",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    }
   ],
 };
 
@@ -137,6 +197,12 @@ function evaluateChosenAnswer() {
     if (gameState.selected !== null) {
       const result = document.querySelector(".result");
       result.innerText = gameState.selected == "true" ? moveUser() : moveOwl();
+      result.innerText = gameState.selected == "true" ? "Correct" : "Wrong";
+
+      const options = document.querySelectorAll(".option");
+      options.forEach(option => {
+        option.style.backgroundColor = option.value == "true" ? "lightgreen" : "crimson";
+      })
     }
   });
 }
@@ -171,13 +237,6 @@ function resetQuestionUI() {
   });
   const result = document.querySelector(".result");
   result.innerText = "";
-}
-
-function restartGame() {
-  gameState.id = 0;
-  gameState.start = true;
-  gameState.selected = null;
-  resetQuestionUI();
 }
 
 function nextQuestion() {
