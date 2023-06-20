@@ -121,9 +121,7 @@ function updateGameQuestion(id) {
 }
 
 function updateSelectedAnswer() {
-  //select all answers and for each add event listener
   const options = document.querySelectorAll(".option");
-  // make the selected = to the clicked button
   options.forEach((option) => {
     option.addEventListener("click", () => {
       gameState.selected = option.value;
@@ -131,8 +129,6 @@ function updateSelectedAnswer() {
       option.style.backgroundColor = "lightblue";
     });
   });
-  // loop to make all same background color
-  // outside of this loop, make selected background color different.
 }
 
 function evaluateChosenAnswer() {
@@ -140,15 +136,36 @@ function evaluateChosenAnswer() {
   evaluateEl.addEventListener("click", () => {
     if (gameState.selected !== null) {
       const result = document.querySelector(".result");
-      result.innerText = gameState.selected == 'true' ? 'Correct' : 'Wrong';
-      // Add in here the movement of the user and owl
+      result.innerText = gameState.selected == "true" ? moveUser() : moveOwl();
     }
   });
 }
 
+function moveUser() {
+  const user = document.querySelector(".user");
+  if (user.nextElementSibling) {
+    user.classList.remove("user");
+    user.nextElementSibling.classList.add("user");
+  } else {
+    alert("You have escaped, well done!");
+    window.location.reload();
+  }
+}
+
+function moveOwl() {
+  const owl = document.querySelector(".owl");
+  if (owl.classList.contains("user")) {
+    alert("The owl caught you");
+    window.location.reload();
+  } else {
+    owl.classList.remove("owl");
+    owl.nextElementSibling.classList.add("owl");
+  }
+}
+
 function resetQuestionUI() {
   gameState.selected = null;
-  const options = querySelectorAll(".option");
+  const options = document.querySelectorAll('.option');
   options.forEach(option => {
     option.style.backgroundColor = "";
   });
@@ -157,9 +174,9 @@ function resetQuestionUI() {
 }
 
 function restartGame() {
-  id = 0;
-  start = true;
-  selected = null;
+  gameState.id = 0;
+  gameState.start = true;
+  gameState.selected = null;
   resetQuestionUI();
 }
 
@@ -167,12 +184,12 @@ function nextQuestion() {
   const next = document.querySelector(".next");
   next.addEventListener("click", () => {
     gameState.start = false;
-    if (gameState.id < gameState.questions.length -1) {
-      id++;
+    if (gameState.id < gameState.questions.length - 1) {
+      gameState.id++;
       updateGameQuestion(gameState.id);
     }
-    resetGameUI();
-  })
+    resetQuestionUI();
+  });
 }
 
 if (gameState.start) {
@@ -182,11 +199,6 @@ if (gameState.start) {
 updateSelectedAnswer();
 evaluateChosenAnswer();
 nextQuestion();
-
-
-  // User & Owl
-  const car = document.querySelector(".user");
-  const bird = document.querySelector(".owl");
 
 // const moveForward = (event) => {
 //   if (event.key === "p") {
