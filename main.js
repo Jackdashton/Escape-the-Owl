@@ -156,6 +156,25 @@ function resetQuestionUI() {
   result.innerText = "";
 }
 
+function restartGame() {
+  id = 0;
+  start = true;
+  selected = null;
+  resetQuestionUI();
+}
+
+function nextQuestion() {
+  const next = document.querySelector(".next");
+  next.addEventListener("click", () => {
+    gameState.start = false;
+    if (gameState.id < gameState.questions.length -1) {
+      id++;
+      updateGameQuestion(gameState.id);
+    }
+    resetGameUI();
+  })
+}
+
 function iterate(id) {
   // User & Owl
   const car = document.querySelector(".user");
