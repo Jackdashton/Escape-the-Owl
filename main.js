@@ -187,7 +187,7 @@ function updateSelectedAnswer() {
     option.addEventListener("click", () => {
       gameState.selected = option.value;
       options.forEach((option) => (option.style.backgroundColor = ""));
-      option.style.backgroundColor = "lightblue";
+      option.style.backgroundColor = "#F16A6F";
     });
   });
 }
