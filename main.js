@@ -135,6 +135,27 @@ function updateSelectedAnswer() {
   // outside of this loop, make selected background color different.
 }
 
+function evaluateChosenAnswer() {
+  const evaluateEl = document.querySelector(".evaluate");
+  evaluateEl.addEventListener("click", () => {
+    if (gameState.selected !== null) {
+      const result = document.querySelector(".result");
+      result.innerText = gameState.selected == 'true' ? 'Correct' : 'Wrong';
+      // Add in here the movement of the user and owl
+    }
+  });
+}
+
+function resetQuestionUI() {
+  gameState.selected = null;
+  const options = querySelectorAll(".option");
+  options.forEach(option => {
+    option.style.backgroundColor = "";
+  });
+  const result = document.querySelector(".result");
+  result.innerText = "";
+}
+
 function iterate(id) {
   // User & Owl
   const car = document.querySelector(".user");
