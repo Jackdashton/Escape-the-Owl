@@ -1,4 +1,5 @@
 // Game State - control the overall status of the game
+
 const gameState = {
   id: 0,
   start: true,
@@ -167,7 +168,7 @@ const gameState = {
   ],
 };
 
-// Update game question
+// Game Controls
 
 function updateGameQuestion(id) {
   const question = document.querySelector("#question");
@@ -258,23 +259,3 @@ if (gameState.start) {
 updateSelectedAnswer();
 evaluateChosenAnswer();
 nextQuestion();
-
-// const moveForward = (event) => {
-//   if (event.key === "p") {
-//     const car = document.querySelector(".user");
-//     if (car.nextElementSibling) {
-//       car.classList.remove("user");
-//       car.nextElementSibling.classList.add("user");
-//     } else {
-//       alert("You have escaped, well done!");
-//       window.location.reload();
-//     }
-//   } else if (event.key === "q") {
-//     const bird = document.querySelector(".owl");
-//     if (bird.classList.contains("user") && bird.classList.contains("owl")) {
-//       alert("Game over, the owl caught you");
-//       window.location.reload();
-//     } else bird.classList.remove("owl");
-//     bird.nextElementSibling.classList.add("owl");
-//   }
-// };
