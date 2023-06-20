@@ -104,6 +104,66 @@ const gameState = {
         { text: "No", isCorrect: false },
       ],
     },
+    {
+      id: 9,
+      question: "Shrieken",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 10,
+      question: "passen",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 11,
+      question: "lacheln",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 12,
+      question: "stellen",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 13,
+      question: "arbeiten",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    },
+    {
+      id: 14,
+      question: "laufen",
+      answers: [
+        { text: "Thanks", isCorrect: false },
+        { text: "Listening", isCorrect: true },
+        { text: "Yes", isCorrect: false },
+        { text: "No", isCorrect: false },
+      ],
+    }
   ],
 };
 
@@ -121,9 +181,7 @@ function updateGameQuestion(id) {
 }
 
 function updateSelectedAnswer() {
-  //select all answers and for each add event listener
   const options = document.querySelectorAll(".option");
-  // make the selected = to the clicked button
   options.forEach((option) => {
     option.addEventListener("click", () => {
       gameState.selected = option.value;
@@ -131,8 +189,6 @@ function updateSelectedAnswer() {
       option.style.backgroundColor = "lightblue";
     });
   });
-  // loop to make all same background color
-  // outside of this loop, make selected background color different.
 }
 
 function evaluateChosenAnswer() {
@@ -140,15 +196,42 @@ function evaluateChosenAnswer() {
   evaluateEl.addEventListener("click", () => {
     if (gameState.selected !== null) {
       const result = document.querySelector(".result");
-      result.innerText = gameState.selected == 'true' ? 'Correct' : 'Wrong';
-      // Add in here the movement of the user and owl
+      result.innerText = gameState.selected == "true" ? moveUser() : moveOwl();
+      result.innerText = gameState.selected == "true" ? "Correct" : "Wrong";
+
+      const options = document.querySelectorAll(".option");
+      options.forEach(option => {
+        option.style.backgroundColor = option.value == "true" ? "lightgreen" : "crimson";
+      })
     }
   });
 }
 
+function moveUser() {
+  const user = document.querySelector(".user");
+  if (user.nextElementSibling) {
+    user.classList.remove("user");
+    user.nextElementSibling.classList.add("user");
+  } else {
+    alert("You have escaped, well done!");
+    window.location.reload();
+  }
+}
+
+function moveOwl() {
+  const owl = document.querySelector(".owl");
+  if (owl.classList.contains("user")) {
+    alert("The owl caught you");
+    window.location.reload();
+  } else {
+    owl.classList.remove("owl");
+    owl.nextElementSibling.classList.add("owl");
+  }
+}
+
 function resetQuestionUI() {
   gameState.selected = null;
-  const options = querySelectorAll(".option");
+  const options = document.querySelectorAll('.option');
   options.forEach(option => {
     option.style.backgroundColor = "";
   });
@@ -156,23 +239,16 @@ function resetQuestionUI() {
   result.innerText = "";
 }
 
-function restartGame() {
-  id = 0;
-  start = true;
-  selected = null;
-  resetQuestionUI();
-}
-
 function nextQuestion() {
   const next = document.querySelector(".next");
   next.addEventListener("click", () => {
     gameState.start = false;
-    if (gameState.id < gameState.questions.length -1) {
-      id++;
+    if (gameState.id < gameState.questions.length - 1) {
+      gameState.id++;
       updateGameQuestion(gameState.id);
     }
-    resetGameUI();
-  })
+    resetQuestionUI();
+  });
 }
 
 if (gameState.start) {
@@ -182,11 +258,6 @@ if (gameState.start) {
 updateSelectedAnswer();
 evaluateChosenAnswer();
 nextQuestion();
-
-
-  // User & Owl
-  const car = document.querySelector(".user");
-  const bird = document.querySelector(".owl");
 
 // const moveForward = (event) => {
 //   if (event.key === "p") {
