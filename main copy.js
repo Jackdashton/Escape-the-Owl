@@ -209,6 +209,5 @@ restartButton.addEventListener('click', restartGame);
 // };
 
 // Add an event listener on keyup which calls a function
-document.addEventListener('keyup', moveForward);
 
 // Functions for the quiz
