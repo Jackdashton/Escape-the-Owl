@@ -7,7 +7,6 @@ This project is a web-based vocabulary quiz game developed using JavaScript, HTM
 * [Project Description](#project-description)
 * [Table of Contents](#table-of-contents)
 * [Technologies](#technologies)
-* [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Project Status](#project-status)
@@ -16,9 +15,6 @@ This project is a web-based vocabulary quiz game developed using JavaScript, HTM
 * JavaScript
 * CSS
 * HTML
-
-## Features
-
 
 ## Screenshots
 
