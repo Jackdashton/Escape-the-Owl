@@ -25,6 +25,28 @@ This project is a web-based vocabulary quiz game developed using JavaScript, HTM
 
 
 ## Setup
+To get started with the project, follow these installation instructions:
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/Jackdashton/Escape-the-Owl.git
+   ```
+
+2. Install the dependencies:
+
+   ```
+   cd 
+   npm install
+   ```
+
+3. Run the project locally:
+
+   ```
+   npm run dev
+
+   The app should now be running on http://localhost:3000/.
+   ```
 
 
 ## Project Status
