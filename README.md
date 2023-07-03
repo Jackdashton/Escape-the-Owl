@@ -21,7 +21,10 @@ This project is a web-based vocabulary quiz game developed using JavaScript, HTM
 
 
 ## Screenshots
-
+![Landing Page](https://user-images.githubusercontent.com/122602433/235965156-3be757f2-53a6-44e0-9581-0416f7550e63.JPG)
+<br />
+<br />
+![Reviews](https://user-images.githubusercontent.com/122602433/235965168-ae045dc1-16ff-4c19-b336-1558e36b0f6e.JPG)
 
 ## Setup
 To get started with the project, follow these installation instructions:
