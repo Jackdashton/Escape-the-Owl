@@ -36,7 +36,7 @@ To get started with the project, follow these installation instructions:
 2. Install the dependencies:
 
    ```
-   cd 
+   cd Escape-the-Owl
    npm install
    ```
 
@@ -52,4 +52,3 @@ To get started with the project, follow these installation instructions:
 ## Project Status
 Status: Complete
 
-## Room for Improvement
